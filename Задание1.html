@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular</title>
+    </head>
+    <body>
+        <script src="angular.min.js"></script>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <input ng-model="MyName">
+            {{MyName}}
+            <br/>
+            <br/>
+            <input ng-model="First">
+            {{First}}
+            <br/>
+            <br/>
+           
+            <input type="radio" ng-model="mySwitch" name="female" value="F">F
+            <input type="radio" ng-model="mySwitch" name="female" value="B">B
+           
+            <br/>
+            <br/>
+            <label for="start">Date of birthday:</label>
+            <input type="date" id="start" name="trip-start"
+            value="2018-07-22">
+            <br/>
+            <br/>
+           
+            <select ng-init="selectName" ng-model="selectName" ng-options="x for x in study">
+            </select>
+            <p ng-show="selectName == 'Doctor'">Your salary is 10000lei</p>
+            <p ng-show="selectName == 'Master'">Your salary is 7000lei</p>
+         
+           <hr>
+           <p ng-show="mySwitch == 'B'">You are man!</p>
+
+
+            </div>
+
+            <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope) {
+                $scope.MyName = "Diana";
+                $scope.First = "Pugaci";
+                $scope.study = [
+                                 "Bacalavr",
+                               "Master",
+                                 "Doctor",
+                                 "Middle",
+                                "spet.middle"
+            ]
+
+            });
+    
+            </script>
+        </body>
+        </html>
